@@ -1,6 +1,7 @@
 import { useRef, useState,useEffect } from 'react';
 import { ImgUrlData } from '../config/MovieData';
 import { NextButton, PrevButton } from './buttons';
+import { PhotosContainer,PhotosI } from './style/media_Photos.style';
 
 export const Photos = () => {
     const scrollContainerRef = useRef(null);
@@ -28,19 +29,19 @@ export const Photos = () => {
 
 
     return (
-        <div className="flex mt-4 w-[77%] md:w-[80%] lg:w-[90%]">
+        <PhotosContainer>
 
             {show&&
             <PrevButton setShow={setShow} scrollContainerRef={scrollContainerRef} scrollbythe={-222} height={130}/>}
             
-            <div className="grid grid-flow-col gap-3 overflow-x-auto no-scrollbar" ref={scrollContainerRef}>
+            <div ref={scrollContainerRef} className='grid grid-flow-col gap-3 overflow-x-auto no-scrollbar'>
                {ImgUrlData.map((item, index) => (
-                    <div key={index} style={{backgroundImage:`url(${item.url})`}} className="w-[210px] h-[130px] bg-cover" />
+                    <PhotosI key={index} style={{backgroundImage:`url(${item.url})`}} />
                 ))}
             </div>
             
             <NextButton setShow={setShow} scrollContainerRef={scrollContainerRef} scrollbythe={222} height={130}/>
-        </div>
+        </PhotosContainer>
     );
 };
 

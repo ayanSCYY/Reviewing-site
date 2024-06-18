@@ -1,12 +1,13 @@
 import { MediaNav } from "../nav";
 import { Photos } from "../Photos";
+import { MediaContainer, MediaSubContainer } from "../style/media_Photos.style";
 
 export const Media=()=>{
     return (
-        <div className=" ml-[22%] lg:ml-[12%]">
-            <div className="text-lg font-bold text-[#59a2a2]">MEDIA</div>
+        <MediaContainer>
+            <MediaSubContainer>MEDIA</MediaSubContainer>
             <MediaNav/>
             <Photos/>
-        </div>
+        </MediaContainer>
     )
 }

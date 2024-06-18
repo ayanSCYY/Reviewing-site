@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize:{
+        "head":"66px"
+      },
+      colors:{
+        "main":"#F9FFDD"
+      },
       backgroundImage:{
         '1stpage':"url('/src/assets/mvi/dune/1.jpg')",
         'menu':"url('/src/assets/mvi/dune/Group 5.png')",
@@ -27,7 +33,7 @@ export default {
     },
 
     screens:{
-      '>md,<lg':"840px"
+      "0.6lg":"840px"
     }
   },
   plugins: [],
